@@ -1,0 +1,136 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(238, 212, 77);
+  background-color: black;
+}
+h2 {
+  font-size: large;
+  font-weight: 1000;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+.test {
+  margin-top: -55%;
+  margin-bottom: 1%;
+}
+li {
+    font-size: larger;
+}
+ul{
+    margin-left: 20%;
+    margin-bottom: 4%;
+}
+.img1 {
+  display: block;
+  margin-left: 40%;
+  margin-right: 50%;
+}
+.parent {
+  display: grid;
+  grid-template-columns: repeat(7em, 1fr);
+  grid-template-rows: repeat(7, 3cm);
+  gap: 15px;
+}
+
+.div2 {
+  grid-column: span 4 / span 1;
+  grid-row: span 2 / span 3;
+  grid-column-start: 10;
+  grid-row-start: 1;
+  background-color: rgb(45, 45, 45);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1%;
+  line-height: 1.7;
+}
+
+.div3 {
+  grid-column: span 2 / span 1;
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  background-color: rgb(50, 50, 50);
+  border-radius: 10px;
+  text-align: center;
+  padding: 4%;
+  line-height: 1.4;
+}
+
+.div1 {
+  grid-column: span 9 / span 9;
+  grid-row: span 2 / span 1;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  background-color: rgb(50, 50, 50);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1.5%;
+  line-height: 1.4;
+}
+
+.div4 {
+  grid-column: span 1 / span 1;
+  grid-row: span 1 / span 1;
+  grid-column-start: 1;
+  grid-row-start: 4;
+  background-color: rgb(50, 50, 50);
+  border-radius: 10px;
+  text-align: center;
+  padding: 1%;
+  line-height: 2;
+}
+
+.card {
+  margin: 0 auto;
+  padding: 1.5em;
+  width: auto;
+  border-radius: 10px;
+  background-color: #13120f;
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card::after,
+.card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    #f7ce4b,
+    #f0c33d,
+    #f9e8a4,
+    #d9a13f,
+    #e1c491,
+    #f7ce4b
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 5s spin linear infinite;
+}
+
+.card::before {
+  filter: blur(1.5em);
+  opacity: 1;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
